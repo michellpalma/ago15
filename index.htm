@@ -5,21 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        function strArr2num(strarr, lim)
+        {
+            arrs = strarr.split(lim);     //Divide ao por comas
+            arrn = [];   //crea array vacio
+            arrs.forEach(elem =>  //convertir texto a numero
+            {
+                arrn.push(Number(elem))
+            });
+
+            return arrn;
+        }
+        
+        function byId(sid)
+        {
+            return document.getElementById(sid).value;
+        }
+
+        function sum (array1, array2)
+        {
+            return array1.map(function (num,idx){return num + array2[idx];})
+        }
+        
         function traslacion()
         {
             //leer datos de vo
             var ao = document.getElementById('vo').value;
-            ao = ao.split(',');     //Divide ao por comas
-           
-            aon = [];   //crea array vacio
-            ao.forEach(elem =>  //convertir texto a numero
-            {
-                aon.push(Number(elem))
-            });
+            //aon = strArr2num(ao, ',')
+            aon = strArr2num(byId('vo'), ',')
+            atn = strArr2num(byId('vt'), ',')
             
-            
-            
-            alert(aon[0]+aon[1]+aon[2]);
+            document.getElementById('vr').value = sum(aon, atn)
+
         }
 
     </script>
