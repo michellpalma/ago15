@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function traslacion()
+        {
+            //leer datos de vo
+            var ao = document.getElementById('vo').value;
+            ao = ao.split(',');     //Divide ao por comas
+           
+            aon = [];   //crea array vacio
+            ao.forEach(elem =>  //convertir texto a numero
+            {
+                aon.push(Number(elem))
+            });
+            
+            
+            
+            alert(aon[0]+aon[1]+aon[2]);
+        }
+
+    </script>
+</head>
+<body>
+    <p>Vector original <input id = "vo" size="8"/>  <!--Vector original-->
+    </p>
+
+    <p>Vector traslación <input id = "vt" size="8"/> <!--Vector traslacion-->
+    </p>
+
+    <p>Vector trasladado <input id = "vr" size="8"/> <!--Vector trasladado-->
+    </p>
+    <button id = "btn_tr" onclick="traslacion()">Realizar Traslación</button>
+
+</body>
+</html>
